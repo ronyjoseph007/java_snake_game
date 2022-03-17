@@ -11,6 +11,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import javax.swing.border.EmptyBorder;
 
 /**
@@ -19,50 +20,35 @@ import javax.swing.border.EmptyBorder;
  */
 public class GameOver extends JPanel implements ActionListener {
 
-    static final int SCREEN_WIDTH = 300;
-    static final int SCREEN_HEIGHT = 300;
+    static final int SCREEN_WIDTH_NEW = 800;
+    static final int SCREEN_HEIGHT_NEW = 300;
     JLabel textfield = new JLabel();
-    JButton button = new JButton();
-    
+   
 
     GameOver() {
-        this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
+        this.setPreferredSize(new Dimension(SCREEN_WIDTH_NEW, SCREEN_HEIGHT_NEW));
         this.setBackground(new Color(150, 240, 250));
         this.setFocusable(true);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBorder(new EmptyBorder(120, 120, 120, 120));
-       
 
         textfield.setForeground(new Color(44, 195, 212));
         textfield.setFont(new Font("Aharoni", Font.BOLD, 50));
         textfield.setText("Game Over");
         textfield.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        button.setFont(new Font("Aharoni", Font.BOLD, 30));
-        button.setForeground(new Color(44, 195, 212));
-        button.setBackground(new Color(97, 237, 207));
-        button.setAlignmentX(Component.CENTER_ALIGNMENT);
-        button.setFocusable(false);
-        button.setBorder(null);
-        button.setText("Play Again");
-        button.setSize(50, 50);
-        button.addActionListener((ActionListener)this);
+       
 
         this.add(textfield);
-        this.add(button);
+        
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.setVisible(false);
+        
        
-        
-        new GameFrame();
-        
-        
+
     }
-    
-    
 
 }
